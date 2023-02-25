@@ -1,0 +1,84 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+
+}
+.time-container{
+	display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.main-time{
+    height: 100%;
+    font-size: 10em;
+    color: blue;
+	box-sizing: border-box;
+}
+.start{
+    width: 30%;
+    font-size:3em ;
+    background-color: blue;
+    color: white;
+    border: white 1px solid;
+	box-sizing: border-box;
+    margin: 0.5px;
+    padding: 20px;
+    letter-spacing:10px;
+}
+.stop{
+    width: 30%;
+    font-size:3em ;
+    background-color: white;
+    color: blue;
+    border: blue 2px solid;
+	box-sizing: border-box;
+    margin: 0.5px;
+    padding: 20px;
+    letter-spacing:10px;
+}
+.bar-container {
+    width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+    align-items: center; 
+
+}
+.bar-container button{
+    width: 10%;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: white 1px solid;
+	box-sizing: border-box;
+    margin: 3px 0.5px;
+}
+.bar-container button:hover{
+	transform: translate(-1px,-1px);
+}
+.bar-container button:active{
+    background-color: white;
+    color: blue;
+    border: blue 2px solid;
+}
+.laps-container{
+    width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; 
+}
+
+.laps-container div{
+    padding: 5px;
+    margin: 3px;
+    width: 100%;
+    border: blue 2px solid;
+    background-color: white;
+    color: blue;
+    box-sizing: border-box;
+}
