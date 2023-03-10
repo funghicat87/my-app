@@ -3,6 +3,7 @@ import  { useState } from "react";
 import useModal from "../components/useModal";
 import Modal from "../components/Modal";
 
+
 function ToDo() {
   const {isShowing, toggle} = useModal();
   const [list, setList] = useState([]);
@@ -11,7 +12,7 @@ function ToDo() {
   function listMapCallback(ele,idx,arr){
     return (
       <label className="ToDoLabel" >
-        <div id="checklist">
+        <div id="CheckList">
           <input type='checkbox' checked={ele.checked} onChange={()=>changeCheckbox(ele.id)}/>
           <span><div>{ele.text}</div></span>
         </div>
@@ -79,5 +80,4 @@ function ToDo() {
     </div>
   );
 }
-
 export default ToDo;

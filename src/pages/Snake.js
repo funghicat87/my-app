@@ -3,7 +3,6 @@ import './Snake.css';
 
 let interval;
 
-
 function Snake() {
   const cv = useRef(null)
   const [snake, setSnake]=useState([
@@ -31,18 +30,18 @@ function Snake() {
   
   const drawFood  = ()=>{
     let ctx = cv.current.getContext("2d")
-    ctx.fillStyle = '#91B585';
+    ctx.fillStyle = 'rgb(243, 243, 243)';
     ctx.fillRect(food.fx+3, food.fy, 4, 3);
     ctx.fillRect(food.fx  , food.fy+3, 3, 4);
     ctx.fillRect(food.fx+7, food.fy+3, 3, 4);
     ctx.fillRect(food.fx+3, food.fy+7, 4, 3);
   }
-  
+
   const drawSnake = ()=>{
     let ctx = cv.current.getContext("2d")
     snake.forEach(
       (ele, idx, arr)=>{
-        ctx.fillStyle = '#91B585';
+        ctx.fillStyle = 'rgb(243, 243, 243)';
         ctx.fillRect(ele.x, ele.y, 10, 10)
       }
     )
@@ -50,7 +49,7 @@ function Snake() {
 
   const clearCanvas = ()=>{
     let ctx = cv.current.getContext("2d")
-    ctx.fillStyle = '#1F3333';
+    ctx.fillStyle = '#707C74';
     ctx.fillRect(0, 0, 500, 500);
   }
 
@@ -145,32 +144,32 @@ function Snake() {
   const showBTN = ()=>{
     if (isReady){
       return (
-        <div id="BTNcontainer" >
-          <div id="LEVELcontainer">
-            <label >
-              <input type="radio" onClick={()=>{setLevel(100)}} value="Easy" name="namelevel"/>
+        <div id="SnakeStartContainer" >
+          <div id="SnakeLevelContainer">
+            <label>
+              <input className="SnakeInput" type="radio" onClick={()=>{setLevel(100)}} value="Easy" name="namelevel"/>
               <div>Easy</div>
             </label>
-            <label >
-              <input type="radio" onClick={()=>{setLevel(50)}} value="Midium" name="namelevel"/>
+            <label>
+              <input className="SnakeInput" type="radio" onClick={()=>{setLevel(50)}} value="Midium" name="namelevel"/>
               <div>Midium</div>
             </label>
-            <label >
-              <input type="radio" onClick={()=>{setLevel(20)}} value="Hard" name="namelevel"/>
+            <label>
+              <input className="SnakeInput" type="radio" onClick={()=>{setLevel(20)}} value="Hard" name="namelevel"/>
               <div>Hard</div>
             </label>
           </div>
-          <button id="playBTN" onClick={startBTN}>PLAY</button>
+          <button id="SnakePlayBTN" onClick={startBTN}>PLAY</button>
         </div>
       );
     }
   }
   
   return (
-    <div  id="container">
-        <div id="CVScontainer">
-          <div id="score">Score : {score}</div>
-          <canvas ref={cv} width="500" height="500" ></canvas>
+    <div  id="SnakeContainer">
+        <div id="SnakeCanvasContainer">
+          <div id="SnakeScore">Score : {score}</div>
+          <canvas className="SnakeCanvas" ref={cv} width="500" height="500" ></canvas>
           {showBTN()}
         </div>
     </div>

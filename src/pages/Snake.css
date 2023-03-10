@@ -1,86 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 *{
-    font-family: 'Press Start 2P', cursive;
-    user-select: none;
+    border: none;
 }
-#container{
+#SnakeContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
     width: 100%;
     height: 100vh;
-    background-color: #91B585;
 }
-#CVScontainer{
+#SnakeCanvasContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
     position: relative;
+    
 }
-#score{
+
+#SnakeScore{
     z-index: 12;
     position: absolute;
     top:20px;
     left:25px;
     text-align: center;
-    color: #91B585;
-    mix-blend-mode: exclusion;  ; 
+    color: var(--font-color);
 }
-canvas{
+
+.SnakeCanvas{
     z-index: 1;
     margin: 10px;
-    background-color: #1F3333;
+    border: var(--border-color);
 }
-#BTNcontainer{
+#SnakeStartContainer{
     z-index: 1;
     width: 80%;
     position: absolute;
-    background-color: #91B585;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    padding: 10px;
-
+    border: var(--border-color);
+    background-color: var(--background-color);
 }
-#LEVELcontainer{
+
+#SnakeLevelContainer{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center; 
+    /* border: var(--border-color); */
 }
-#LEVELcontainer div{
+
+#SnakeLevelContainer div{
     text-align: center;
-    line-height:2em;
+    padding: 10px 20px;
+
 }
-#LEVELcontainer label{
+
+#SnakeLevelContainer label{
     width: 100%;
+    font-size: var(--btn-font-size);
+    color:var(--font-color);
+    border-right: var(--border-color);
+    letter-spacing:var(--btn-letter-spacing);
 }
-#playBTN{
+
+#SnakeLevelContainer label:last-child{
+    border-right: none;
+}
+
+
+#SnakePlayBTN{
     width: 100%;
-    line-height:3em;
-    text-align: center;
-    background-color: #1F3333;
-    border: 0;
-    color:#91B585 ;
-    margin:10px 0px 0px 0px;
+    font-size: var(--btn-font-size);
+    color:var(--font-color);
+    border-top: var(--border-color);
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    letter-spacing:var(--btn-letter-spacing);
+    box-sizing: border-box;
 }
-#playBTN:hover{
-    background-color: #122222;
+
+#SnakePlayBTN:hover{
+    background-color: var(--hover-color);
 }
-input {
+
+.SnakeInput {
     display: none;
 }
-input +div{
+
+.SnakeInput +div{
     width:100%;
-    background-color: #91B585;
-    color: #1F3333;
     box-sizing: border-box;
-    border: #91B585 5px solid;
 }
-input:checked + div{
-    border: #1F3333 4px solid;
-} 
+
+.SnakeInput:checked + div,.SnakeInput:hover + div{
+    background-color: var(--hover-color);
+}

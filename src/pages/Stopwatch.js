@@ -1,6 +1,7 @@
 import  { useState } from "react";
 import './Stopwatch.css';
 
+
 let interval;
 
 function Stopwatch() {
@@ -32,7 +33,8 @@ function Stopwatch() {
 
   const resetBtn = ()=> {
     clearInterval(interval);
-    setTime(0)
+    setTime(0);
+    setChangeBtn("START");
   }
 
   const lapBtn = ()=> {
@@ -53,28 +55,28 @@ function Stopwatch() {
 
   const changeCss = ()=>{
     if (changeBtn==="START"){
-      return "start"
+      return "StopwatchStartBTN"
     }
     else {
-      return "stop"
+      return "StopwatchStopBTN"
     }
   }
 
   return (
-    <div className="container">
-      <div className="time-container">
-        <div className="main-time">
-          {turnToFormat(time)}
+    <div className="StopwatchContainer">
+      <div className="StopwatchMain">
+        <div className="StopwatchTime">
+        {turnToFormat(time)}
         </div>
-      </div>
-      <button className={changeCss()} onClick={startBtn}>{changeBtn}</button>
-      <div className="bar-container">
-        <button onClick={lapBtn}>Lap</button>
-        <button onClick={resetBtn}>Reset</button>
-        <button onClick={clearlapsBtn}>Clear Laps</button>
-      </div>
-      <div className="laps-container">
-        {lap.map(listLapCallback)}
+        <button className={changeCss()} onClick={startBtn}>{changeBtn}</button>
+        <div className="StopwatchMainBTNContainer">
+          <button onClick={lapBtn}>Lap</button>
+          <button onClick={resetBtn}>Reset</button>
+          <button onClick={clearlapsBtn}>Clear Laps</button>
+        </div>
+        <div className="StopwatchList">
+          {lap.map(listLapCallback)}
+        </div>
       </div>
     </div>
   );

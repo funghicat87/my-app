@@ -158,14 +158,14 @@ function TicTacToe() {
     <div className="TicMain">
       <div className={winner!==''? "TicFadeIn TicResult":"TicResultFadeOut TicResult"}>
         {getWinner(winner)}
-        <button className="TicBtn" onClick={Reset}>AGAIN</button>
+        <button className="TicBTN" onClick={Reset}>AGAIN</button>
       </div>
       <div className={winner!==''? "TicFadeOut TicShowGame":"TicFadeIn TicShowGame"}>
         <div className="TicWords">Player {getCX(player)}</div>
         <div className="TicContainer">
           {createBox()}
         </div>
-        <button className="TicBtn" onClick={Reset}>RESET</button>
+        <button className="TicBTN" onClick={Reset}>RESET</button>
       </div>
     </div>
   );
